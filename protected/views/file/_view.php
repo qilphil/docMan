@@ -31,28 +31,5 @@
                     echo "<span class='tag'>{$tag->tag_name}</span>";
                ?>
        
-        
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('creator_id')); ?>:</b>
-	<?php echo CHtml::encode($data->creator_id); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('lastchange_id')); ?>:</b>
-	<?php echo CHtml::encode($data->lastchange_id); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('version')); ?>:</b>
-	<?php echo CHtml::encode($data->version); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('deleted')); ?>:</b>
-	<?php echo CHtml::encode($data->deleted); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('parent_version_id')); ?>:</b>
-	<?php echo CHtml::encode($data->parent_version_id); ?>
-	<br />
-
-	*/ ?>
 
 </div>

@@ -2029,3 +2029,41 @@ Stack trace:
 REQUEST_URI=/docman_yii/file/upload
 HTTP_REFERER=http://localhost:81/docman_yii/file/upload
 ---
+2012/01/24 18:33:15 [error] [php] include(Tag.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\xampp\php\PEAR\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\xampp\php\PEAR\framework\db\ar\CActiveRecord.php(378): spl_autoload_call()
+#1 C:\xampp\php\PEAR\framework\web\CActiveDataProvider.php(75): model()
+#2 C:\xampp\htdocs\docman_yii\protected\controllers\TagController.php(130): CActiveDataProvider->__construct()
+#3 C:\xampp\php\PEAR\framework\web\actions\CInlineAction.php(50): TagController->actionIndex()
+#4 C:\xampp\php\PEAR\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\php\PEAR\framework\web\filters\CFilterChain.php(134): TagController->runAction()
+#6 C:\xampp\php\PEAR\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\xampp\php\PEAR\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 C:\xampp\php\PEAR\framework\web\filters\CInlineFilter.php(59): TagController->filterAccessControl()
+#9 C:\xampp\php\PEAR\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 C:\xampp\php\PEAR\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\php\PEAR\framework\web\CController.php(266): TagController->runActionWithFilters()
+#12 C:\xampp\php\PEAR\framework\web\CWebApplication.php(276): TagController->run()
+#13 C:\xampp\php\PEAR\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#14 C:\xampp\php\PEAR\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\docman_yii\index.php(13): CWebApplication->run()
+REQUEST_URI=/docman_yii/tag/index
+in C:\xampp\htdocs\docman_yii\protected\controllers\TagController.php (130)
+in C:\xampp\htdocs\docman_yii\index.php (13)
+2012/01/24 18:34:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\php\PEAR\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\xampp\php\PEAR\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\php\PEAR\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\php\PEAR\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\php\PEAR\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\php\PEAR\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\php\PEAR\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\php\PEAR\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\php\PEAR\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 C:\xampp\php\PEAR\framework\web\CWebApplication.php(135): CWebApplication->runController('tag/admin')
+#9 C:\xampp\php\PEAR\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\docman_yii\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/docman_yii/tag/admin
+HTTP_REFERER=http://localhost:81/docman_yii/tag/2
+---

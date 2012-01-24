@@ -107,11 +107,11 @@ class mnTagsFiles extends CActiveRecord {
         if (!is_object($file) && intval($file) > 0 && intval($file) == $file)
             $file_obj = File::model()->findByPk($file);
         if (!is_object($tag) && intval($tag) > 0 && intval($tag) == $tag)
-            $tag_obj = Tags::model()->findByPk($tag);
+            $tag_obj = Tag::model()->findByPk($tag);
         if (!is_object($tag)) {
-            $tag_obj = Tags::model()->find('tag_name = :name', array(':name' => $tag));
+            $tag_obj = Tag::model()->find('tag_name = :name', array(':name' => $tag));
             if ($tag_obj === null)  {
-                $tag_obj = Tags::newTag($tag_name);
+                $tag_obj = Tag::newTag($tag_name);
             }
         } else {
             $tag_obj = $tag;
@@ -120,7 +120,7 @@ class mnTagsFiles extends CActiveRecord {
         docLog::log_data("Tag_obj",$tag_obj);
         
 
-        if (is_a($file_obj, 'File') && is_a($tag_obj, 'Tags')) {
+        if (is_a($file_obj, 'File') && is_a($tag_obj, 'Tag')) {
             $newFileTag = new mnTagsFiles;
             $newFileTag->setAttributes( array(
                 'file_id' => $file_obj->id,

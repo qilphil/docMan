@@ -1,6 +1,6 @@
 <?php
 
-class TagsController extends Controller
+class TagController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -61,14 +61,14 @@ class TagsController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Tags;
+		$model=new Tag;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Tags']))
+		if(isset($_POST['Tag']))
 		{
-			$model->attributes=$_POST['Tags'];
+			$model->attributes=$_POST['Tag'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -90,9 +90,9 @@ class TagsController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Tags']))
+		if(isset($_POST['Tag']))
 		{
-			$model->attributes=$_POST['Tags'];
+			$model->attributes=$_POST['Tag'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -127,7 +127,7 @@ class TagsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Tags');
+		$dataProvider=new CActiveDataProvider('Tag');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -138,10 +138,10 @@ class TagsController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Tags('search');
+		$model=new Tag('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Tags']))
-			$model->attributes=$_GET['Tags'];
+		if(isset($_GET['Tag']))
+			$model->attributes=$_GET['Tag'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -155,7 +155,7 @@ class TagsController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Tags::model()->findByPk($id);
+		$model=Tag::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -167,7 +167,7 @@ class TagsController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='tags-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='tag-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

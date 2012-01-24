@@ -9,6 +9,6 @@
 	<li><a href="<?php echo $this->createUrl('user/index')?>">Users</a></li>
 	<li><a href="<?php echo $this->createUrl('file/index')?>">Files</a></li>
 	<li><a href="<?php echo $this->createUrl('file/upload')?>">File Upload</a></li>
-	<li><a href="<?php echo $this->createUrl('tags/index')?>">Tags</a></li>
+	<li><a href="<?php echo $this->createUrl('tag/index')?>">Tags</a></li>
 	
 </ul>

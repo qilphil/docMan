@@ -134,7 +134,7 @@ class File extends docActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-             'tags' => array(self::MANY_MANY, 'Tags', 'tags_files(file_id,tag_id)', 'order' => 'tags.tag_name'),
+             'tags' => array(self::MANY_MANY, 'Tag', 'tags_files(file_id,tag_id)', 'order' => 'tags.tag_name'),
             'owner' => array(self::BELONGS_TO, 'User', 'owner_id'),
             'creator' => array(self::BELONGS_TO, 'User', 'creator_id'),
             'last_editor' => array(self::BELONGS_TO, 'User', 'lastchange_id')

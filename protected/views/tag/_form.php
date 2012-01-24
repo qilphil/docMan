@@ -1,7 +1,7 @@
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'tags-form',
+	'id'=>'tag-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 

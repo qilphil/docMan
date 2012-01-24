@@ -13,12 +13,12 @@
  * @property string $tag_name
  * @property string $tag_name_lower
  */
-class Tags extends docActiveRecord {
+class Tag extends docActiveRecord {
 
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
-     * @return Tags the static model class
+     * @return Tag the static model class
      */
     public static function model($className = __CLASS__) {
         return parent::model($className);
@@ -65,7 +65,7 @@ class Tags extends docActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'files' => array(self::MANY_MANY, 'Tags', 'tags_files(tag_id,file_id)', 'order' => 'filename'),
+            'files' => array(self::MANY_MANY, 'Tag', 'tags_files(tag_id,file_id)', 'order' => 'filename'),
             'creator' => array(self::BELONGS_TO, 'User', 'creator_id'),
             'last_editor' => array(self::BELONGS_TO, 'User', 'lastchange_id')
         );
